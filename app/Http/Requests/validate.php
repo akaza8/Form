@@ -22,9 +22,9 @@ class validate extends FormRequest
     public function rules(): array
     {
         return [
-            "name"=>"required|string|max:255",
+            "name"=>"required|alpha|max:255",
             "email"=>"required|email",
-            "degrees.*"=>"nullable|string",
+            "degrees.*"=>"nullable|alpha",
             "percentages.*"=>"nullable|numeric|min:0|max:100",
         ];
     }
