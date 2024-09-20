@@ -12,16 +12,25 @@ class FormController extends Controller
     }
     public function showData(validate $request){
         // dd($request->all());
-        return view("data",[
-                    'name'=>request()->get('name'),
-                    'email'=>request()->get('email'),
+        $data= $request->all();
+        
+        // return view("data",[
+        //             'name'=>request()->get('name'),
+        //             'email'=>request()->get('email'),
                     
-                    'dob'=>request()->get('dob'),
-                    'gender'=>request()->get('gender'),
+        //             'dob'=>request()->get('dob'),
+        //             'gender'=>request()->get('gender'),
 
-                    'degrees'=>request()->get('degrees',[]),
-                    'percentages'=>request()->get('percentages',[]),
+        //             'degrees'=>request()->get('degrees',[]),
+        //             'percentages'=>request()->get('percentages',[]),
+        //             // 'name'=>$data['name'],
+        //             // 'email'=>$data['email'],
+        //             // 'dob'=>$data['dob'],
+        //             // 'gender'=>$data['gender'],
+        //             // 'degrees'=>$data['degrees'],
+        //             // 'percentages'=>$data['percentages'],
                                             
-                ]);
+        // ]);
+        return view('data',$data);
     }
 }

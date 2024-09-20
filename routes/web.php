@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\LayoutFormController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SessionController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -110,3 +112,28 @@ Route::get('/records',[ExampleController::class,'show']);
 
 Route::get('form',[FormController::class,'showForm'])->name('form.show');
 Route::post('submit',[FormController::class,'showData'])->name('form.data');
+
+Route::get('session/get','SessionController@accessSessionData');
+Route::get('session/set','SessionController@storeSessionData');
+Route::get('session/remove','SessionController@deleteSessionData');
+
+
+// Route::get('adminio',function(){
+//     return view('admin.index');
+// });
+
+
+// Route::get('db',[UserController::class,'getDb'])->name('test.db');
+
+
+
+// Route::get('adminio/1',[LayoutFormController::class,"showForm"]
+// )->name('layoutform.show');
+// Route::post('admindata', [LayoutFormController::class, "showData"])->name('layoutform.data');
+// Route::get('hotel/edit/{id}', [LayoutFormController::class, 'edit'])->name('hotel.edit');
+
+
+Route::get('adminio/{id?}', [LayoutFormController::class, "showForm"])->name('layoutform.show');
+Route::post('admindata', [LayoutFormController::class, "store"])->name('layoutform.data');
+Route::post('hotel/update/{id}', [LayoutFormController::class, "update"])->name('hotel.update');
+Route::get('admin/hotels', [LayoutFormController::class, "showData"])->name('hotel.data');

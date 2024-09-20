@@ -26,6 +26,8 @@ class validate extends FormRequest
             "email"=>"required|email",
             "degrees.*"=>"nullable|alpha",
             "percentages.*"=>"nullable|numeric|min:0|max:100",
+
+            
         ];
     }
     public function messages(): array
@@ -38,6 +40,8 @@ class validate extends FormRequest
             'percentages.*.numeric' => 'Each percentage should be a valid number.',
             'percentages.*.min' => 'Percentage should be at least 0.',
             'percentages.*.max' => 'Percentage should not be more than 100.',
+
+            
         ];
     }
 }

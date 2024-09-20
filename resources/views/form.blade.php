@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="mb-4">User Information Form</h2>
-        <form action="{{ route('form.data') }}" method="post">
+        <form action="{{ route('form.data') }}"  method="post">
             @csrf
             <div class="form-group">
                 <label for="name" class="form-label">Name</label>
