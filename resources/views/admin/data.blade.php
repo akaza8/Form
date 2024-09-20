@@ -9,14 +9,15 @@ Hotel Information
 @endsection
 
 @section('index-content')
-<div class="container mt-5">
-    <h2 class="mb-4">Hotel List</h2>
+<div class="container mt-0 card px-5 mb-3">
+    <!-- <h2 class="">Hotel List</h2> -->
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <div class="table-responsive">
+    <div class="table-responsive card-body">
+    <a href="{{ route('layoutform.show') }}" class="btn btn-success my-4 float-right mx-0 ">Add New Hotel</a>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -45,6 +46,6 @@ Hotel Information
         </table>
     </div>
 
-    <a href="{{ route('layoutform.show') }}" class="btn btn-success mt-4">Add New Hotel</a>
+    
 </div>
 @endsection

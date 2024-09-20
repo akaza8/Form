@@ -9,12 +9,12 @@ Hotels
 @endsection
 
 @section('index-content')
-<div class="container mt-2">
+<div class="container mt-2 card mx-5 " style="width: 75vw;">
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <form action="{{ isset($hotel) ? route('hotel.update', $hotel->id) : route('layoutform.data') }}" method="post">
+    <form action="{{ isset($hotel) ? route('hotel.update', $hotel->id) : route('layoutform.data') }}" method="post" class="card-body">
         @csrf
         <div class="form-group">
             <label for="hotel-id" class="form-label">Hotel ID</label>
